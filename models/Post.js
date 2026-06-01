@@ -18,7 +18,7 @@ const postSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Content is Required']
     },
-    creation_date: : {
+    creation_date: {
         type: Date,
         default: Date.now
     },
