@@ -14,3 +14,5 @@ Router.patch("/:postId", verify, postController.editPost);
 
 Router.delete("/:postId", verify, verifyAdmin, postController.deletePost);
 
+module.exports = Router;
+

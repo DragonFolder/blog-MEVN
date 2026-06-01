@@ -73,7 +73,7 @@ module.exports.editPost = async (req, res) => {
 			title: req.body.title,
 			content: req.body.content,
 			information: req.body.information,
-			author: req.user.id.
+			author: req.user.id,
 			creation_date: targetPost.creation_date
 		}
 
