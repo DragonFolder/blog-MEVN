@@ -1,5 +1,5 @@
 <script setup>
-	import { ref, onMounted, definedProps } from 'vue';
+	import { ref, onMounted } from 'vue';
 	import PostCard from '../components/PostCard.vue';
 	import api from '../api';
 	import { Notyf } from 'notyf';
