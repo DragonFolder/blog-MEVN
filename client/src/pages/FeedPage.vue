@@ -29,7 +29,7 @@
 	<div class="container-fluid">
 		<div class="d-flex justify-content-end my-3">
 			<router-link :to="{ name: 'AddPost'}" class="btn btn-success">
-				<i class="bi bi-plus-lg">New Post</i>
+				<i class="bi bi-plus-lg"></i>New Post
 			</router-link>
 		</div>
 

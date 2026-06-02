@@ -24,9 +24,9 @@
 		}
 	})
 
-	const canEdit = computed(() => {
-		post.value && user.value && (user.value.id === post.value.author || user.value.isAdmin)
-	})
+	const canEdit = computed(() => 
+		post.value && user.value && (user.value.id === post.value.author?._id || user.value.isAdmin)
+	)
 </script>
 
 <template>
