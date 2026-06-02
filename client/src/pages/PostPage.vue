@@ -33,7 +33,7 @@
 	<div v-if="post" class="container-fluid">
 		<div class="col-md-8 mx-auto my-5">
 			<h1>{{ post.title }}</h1>
-			<p class="text-muted small">{{ new Date(post.creation_date).toLocalString() }}</p>
+			<p class="text-muted small">{{ new Date(post.creation_date).toLocaleString() }}</p>
 			<p>{{ post.content }}</p>
 			<router-link v-if="canEdit" :to="{ name: 'EditPost', params: { postId: post._id }}" class="btn btn-primary">
 				Edit
