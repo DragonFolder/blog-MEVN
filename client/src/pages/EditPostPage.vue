@@ -18,7 +18,7 @@
 	onMounted(async() => {
 		try {
 			const { data } = await api.get(`/posts/${postId}`);
-			title.vale = data.result.title;
+			title.value = data.result.title;
 			content.value = data.result.content;
 		} catch (e){
 			notyf.error("Could not load post");
@@ -29,9 +29,9 @@
 		
 	})
 
-	watch([title, content]), (current) => {
+	watch([title, content], (current) => {
 		isEnabled.value = current.every(field => field !== "");
-	}
+	})
 
 	async function handleSubmit(e){
 		e.preventDefault();
@@ -43,7 +43,7 @@
 			notyf.success("Post updated");
 			router.push({ name: 'Post', params: { postId }});
 		} catch(e){
-			notyf.error(e.response?.data.message ?? "Update failed");
+			notyf.error(e.response?.data?.message ?? "Update failed");
 		}
 	}
 </script>
