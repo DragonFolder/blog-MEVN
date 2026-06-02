@@ -16,6 +16,9 @@ import HomePage from './pages/HomePage.vue';
 import LoginPage from './pages/LoginPage.vue';
 import RegisterPage from './pages/RegisterPage.vue';
 import LogoutPage from './pages/LogoutPage.vue';
+import FeedPage from './pages/FeedPage.vue';
+import PostPage from './pages/PostPage.vue';
+import EditPostPage from './pages/EditPostPage.vue';
 
 const router = createRouter({
 	history: createWebHistory(),
@@ -39,6 +42,21 @@ const router = createRouter({
 			path: '/logout',
 			name: 'Logout',
 			component: LogoutPage
+		},
+		{
+			path: '/posts',
+			name: 'Feed',
+			component: FeedPage
+		},
+		{
+			path: '/posts/:postId',
+			name: 'Post',
+			component: PostPage
+		},
+		{
+			path: '/posts/:postId/edit',
+			name: 'EditPost',
+			component: EditPostPage
 		},
 		{
 			path: '/:catchAll(.*)',

@@ -6,7 +6,6 @@ module.exports.addPost = async (req, res) => {
 		let newPost = new Post({
 			title: req.body.title,
 			content: req.body.content,
-			information: req.body.information,
 			author: req.user.id
 		});
 
@@ -23,7 +22,7 @@ module.exports.addPost = async (req, res) => {
 
 module.exports.viewAllPosts = async (req, res) => {
 	try{
-		const result = await Post.find({})
+		const result = await Post.find({}).populate('author', 'firstName lastName')
 
 		return res.status(200).send({
 			message: "Successfully read all posts",
@@ -36,7 +35,7 @@ module.exports.viewAllPosts = async (req, res) => {
 
 module.exports.viewPost = async (req, res) => {
 	try{
-		const result = await Post.findById(req.params.postId);
+		const result = await Post.findById(req.params.postId).populate('author', 'firstName lastName');
 
 		if(!result){
 			return res.status(404).send({
@@ -72,7 +71,6 @@ module.exports.editPost = async (req, res) => {
 		let updatedPost = {
 			title: req.body.title,
 			content: req.body.content,
-			information: req.body.information,
 			author: req.user.id,
 			creation_date: targetPost.creation_date
 		}

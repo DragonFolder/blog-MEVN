@@ -14,10 +14,6 @@ const postSchema = new mongoose.Schema({
         ref: 'User',
         required: [true, 'Author is Required']
     },
-    information: {
-        type: String,
-        required: [true, 'Content is Required']
-    },
     creation_date: {
         type: Date,
         default: Date.now
