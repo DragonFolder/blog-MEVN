@@ -18,6 +18,7 @@ import RegisterPage from './pages/RegisterPage.vue';
 import LogoutPage from './pages/LogoutPage.vue';
 import FeedPage from './pages/FeedPage.vue';
 import PostPage from './pages/PostPage.vue';
+import AddPostPage from './pages/AddPostPage.vue';
 import EditPostPage from './pages/EditPostPage.vue';
 
 const router = createRouter({
@@ -49,10 +50,15 @@ const router = createRouter({
 			component: FeedPage
 		},
 		{
+			path: '/posts/new',
+			name: 'AddPost',
+			component: AddPostPage
+		},
+		{
 			path: '/posts/:postId',
 			name: 'Post',
 			component: PostPage
-		},
+		},		
 		{
 			path: '/posts/:postId/edit',
 			name: 'EditPost',

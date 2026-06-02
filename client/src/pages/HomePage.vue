@@ -11,7 +11,7 @@
       bannerProps: {
         title: "CatFruit Blog",
         tagline: "Shenanigans Captured",
-        destination: "Home",
+        destination: "Feed",
         buttonLabel: "Check our posts!"
       }
     }
