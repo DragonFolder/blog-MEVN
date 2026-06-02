@@ -8,15 +8,14 @@
 	const router = useRouter();
 	const notyf = new Notyf();
 
-	const postId = route.params.postId;
 
 	const title = ref("");
 	const content = ref("");
 	const isEnabled = ref(false);
 
-	watch([title, content]), (current) => {
+	watch([title, content], (current) => {
 		isEnabled.value = current.every(field => field !== "");
-	}
+	})
 
 	async function handleSubmit(e){
 		e.preventDefault();
@@ -37,8 +36,7 @@
 	<div class="container-fluid">
 		<h1 class="my-5 pt-3 text-primary text-center">New Post</h1>
 
-		<div v-if="isLoading">Loading...</div>
-		<div v-else class="row d-flex justify-content-center">
+		<div class="row d-flex justify-content-center">
 			<div class="col-md-6 mx-auto">
 				<form v-on:submit="handleSubmit">
 					<div class="mb-3">
@@ -50,7 +48,7 @@
 						<textarea class="form-control" id="content" rows="4" v-model="content" />
 					</div>
 					<div class="d-grid mt-4">
-						<button type="submit" class="btn btn-primary" v-if="isEnabled">Save Changes</button>
+						<button type="submit" class="btn btn-primary" v-if="isEnabled">Publish</button>
 						<button type="button" class="btn btn-danger" disabled v-else>Fill in all values</button>
 					</div>
 				</form>
