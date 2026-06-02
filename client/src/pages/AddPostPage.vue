@@ -1,9 +1,10 @@
 <script setup>
 	import { ref, watch, onMounted } from 'vue';
-	import { useRouter } from 'vue-router';
+	import { useRoute, useRouter } from 'vue-router';
 	import { Notyf } from 'notyf';
 	import api from '../api';
 
+	const route = useRoute();
 	const router = useRouter();
 	const notyf = new Notyf();
 
