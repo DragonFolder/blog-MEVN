@@ -51,7 +51,7 @@
 				By {{ post.author?.firstName }} {{ post.author?.lastName }} · {{ postedOn }}
 			</p>
 
-			<p class="card-text mb-0">{{ post-content }}</p>
+			<p class="card-text mb-0">{{ post.content }}</p>
 		</div>
 	</div>
 </template>
