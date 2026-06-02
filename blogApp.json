@@ -1,0 +1,8 @@
+{
+    "url": "https://blog-mevn-n7ad.onrender.com/",
+    "endpoints": {
+        "register": "/register",
+        "login": "/login",
+        "posts": "/posts"
+    }
+}
